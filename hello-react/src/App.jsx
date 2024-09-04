@@ -1,11 +1,14 @@
 import React from "react";
-import Test from "./components/Test";
+
 import "./App.css";
+import GetUsers from "./components/GetUsers";
+import GetUsersEmail from "./components/GetUsersEmail";
 
 function App() {
   return (
     <React.Fragment>
-      <Test />
+      <GetUsers />
+      <GetUsersEmail />
     </React.Fragment>
   );
 }

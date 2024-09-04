@@ -1,11 +1,11 @@
 import React from "react";
-import Color from "./components/colorize/Color";
+import Test from "./components/Test";
 import "./App.css";
 
 function App() {
   return (
     <React.Fragment>
-      <Color />
+      <Test />
     </React.Fragment>
   );
 }

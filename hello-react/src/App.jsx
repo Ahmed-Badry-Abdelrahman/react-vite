@@ -1,31 +1,14 @@
-import React, { createContext, useState } from "react";
 import "./App.css";
-import Greating from "./components/Greating";
-import Welcome from "./components/Welcome";
-
-export const counterContext = createContext();
-
-function App() {
-  const [count, setCounter] = useState(0);
-  console.log(`App re-rendering`);
-  const handleClick = () => {
-    setCounter((c) => c + 1);
-    console.log(`App re-rendering ${count}`);
-  };
+import Header from "./components/Header";
+import { ThemeProvider } from "./Context/ThemeContext";
+// import ThemeToggle from "./Context/ThemeToggle";
+const App = () => {
+  // localStorage.clear();
   return (
-    <React.Fragment>
-      <counterContext.Provider value={{ count, setCounter }}>
-        <Greating counter="1" />
-        <hr />
-        <Welcome />
-        <hr />
-      </counterContext.Provider>
-      <div>
-        <p>App Counter: {count}</p>
-        <button onClick={handleClick}>Increment Counter</button>
-      </div>
-    </React.Fragment>
+    <ThemeProvider>
+      <Header />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

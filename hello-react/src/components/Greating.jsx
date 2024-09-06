@@ -1,20 +1,16 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import { counterContext } from "../App";
 const Greating = ({ counter }) => {
-  const [count, setCounter1] = useState(0);
+  const { count, setCounter } = useContext(counterContext);
   console.log(`Greating re-rendering`);
   console.log(`count from app ${counter}`);
-  const handleClick = () => {
-    setCounter1((c) => c + 1);
-    console.log(`Greating e-rendering ${count}`);
-  };
 
   return (
     <React.Fragment>
       <div>
         <h1>Hello1</h1>
         <p>You have visited this page {count} times.</p>
-        <button onClick={handleClick}>click</button>
+        <button onClick={() => setCounter((prev) => prev + 1)}>click</button>
       </div>
     </React.Fragment>
   );
